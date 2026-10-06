@@ -8,6 +8,13 @@
     overflow: hidden;
 }
 
+.project-box .image img {
+    width: 100%;
+    height: 250px; /* غيّر الرقم حسب ما يناسب التصميم */
+    object-fit: cover;
+    border-radius: 6px; /* اختياري */
+}
+
 /* الصور داخل العناصر */
 .image img {
     display: block;
@@ -271,10 +278,25 @@ input[type="reset"]:disabled {
     opacity: 0.7;
 }
 
+/* Actions — inline buttons */
+ul.actions {
+    display: flex;
+    gap: 1em; /* المسافة بين الزرارين */
+    flex-wrap: wrap; /* لو الشاشة صغيرة ينزلوا تحت بعض */
+    padding: 0;
+    margin: 1.5em 0;
+    list-style: none;
+}
+
+ul.actions li {
+    padding: 0;
+    margin: 0;
+}
+
 /* Item — Sleem Components */
 
 .item {
-    background: #fff;
+    background: #5d8175;
     border-radius: 0.5em;
     padding: 1.5em;
     margin-bottom: 2.5em;
@@ -293,14 +315,14 @@ input[type="reset"]:disabled {
     margin: 0 0 1em 0;
     padding: 0;
     font-size: 0.9em;
-    color: #666;
+    color: #666666;
 }
 
 /* Title */
 .item header h3 {
-    font-size: 1.15em;
-    font-weight: 500;
-    color: #333;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #a5ffb6;
     margin: 0;
 }
 
