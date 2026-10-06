@@ -1,40 +1,130 @@
-Prologue by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+# 📄 **README — Landscape Engineer Portfolio (Custom Rebuild)**
 
+```markdown
+# Landscape Engineer — Ahmad Abusleem  
+A fully rebuilt and customized portfolio template designed for landscape engineering projects, modular planning, and professional documentation.
 
-This is Prologue, a simple, single page responsive site template. It features a
-clean, minimalistic design and a sticky sidebar with navigation-linked scrolling.
+This project is a complete reconstruction of an existing HTML5UP-style template, rebuilt from scratch with a new grid system, new components, new layout logic, and a unified background system.  
+All pages, sections, and UI elements have been redesigned to match a clean, modern, and professional identity.
 
-Demo content images* are courtesy of the ridiculously talented Felicia Simion. Check out
-more of her amazing work over at deviantART:
+---
 
-http://ineedchemicalx.deviantart.com/
+## 🚀 Features
 
-(* = Not included! Only meant for use with my own on-site demo, so please do NOT download
-and/or use any of Felicia's work without her explicit permission!)
+### ✔ Custom Grid System  
+A fully rebuilt 12‑column grid with flexible classes (`col-12`, `col-8`, `col-6`, `col-4`, `col-3`) and responsive behavior.
 
-Demo banner images* courtesy of Unsplash, a radtastic collection of CC0 (public domain)
-images you can use for pretty much whatever.
+### ✔ Unified Background System  
+A global background image applied through CSS, ensuring visual consistency across all pages.
 
-(* = Not included)
+### ✔ Modular Page Structure  
+Each page is built as an independent module:
+- Home  
+- About  
+- Blog 
+- Projects  
+- Contact  
 
-AJ
-aj@lkn.io | @ajlkn
+### ✔ Rebuilt Components  
+Buttons, cards, project boxes, blog boxes, and layout sections redesigned for clarity and consistency.
 
-PS: Not sure how to get that contact form working? Give formspree.io a try (it's awesome).
+### ✔ Mobile‑Friendly Sidebar  
+A responsive sidebar with a mobile toggle system.
 
+### ✔ Image Fit System  
+Unified image sizes using `object-fit: cover` for clean project and blog grids.
 
-Credits:
+### ✔ Ready for Animations  
+The structure supports future page transitions (slide‑in, fade‑in, GSAP animations).
 
-	Demo Images:
-		Felicia Simion (ineedchemicalx.deviantart.com)
-		Unsplash (unsplash.com)
+---
 
-	Icons:
-		Font Awesome (fontawesome.io)
+## 📁 Project Structure
 
-	Other
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+```
+root/
+│
+├── index.html
+├── about.html
+├── blog.html
+├── projects.html
+├── contact.html
+│
+├── assets/
+│   ├── css/
+│   │   ├── layout.css
+│   │   ├── components.css
+│   │   ├── mobile.css
+│   │   └── fontawesome-all.min.css
+│   │
+│   ├── images/
+│   │   ├── profile.png
+│   │   ├── third_bg.jpg
+│   │   ├── projects/
+│   │   └── blog/
+│   │
+│   └── fonts/
+│
+└── README.md
+```
+
+---
+
+## 🎨 Styling
+
+### Global Background  
+Applied once in `layout.css`:
+
+```css
+body {
+    background-image: url('../images/third_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+```
+
+### Unified Image Sizes
+
+```css
+.image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+```
+
+---
+
+## 📱 Responsive Design
+
+The layout adapts to all screen sizes using:
+- Flexible grid classes  
+- Mobile sidebar toggle  
+- Dedicated `mobile.css` overrides  
+
+---
+
+## 🛠 Technologies Used
+
+- HTML5  
+- CSS3  
+- Custom Grid System  
+- Font Awesome Icons  
+- Vanilla JavaScript (for toggles and future animations)
+
+---
+
+## 📬 Contact
+
+**Landscape Engineer — Ahmad Abusleem**  
+Professional outdoor design, irrigation networks, and climate‑adaptive landscaping.
+
+---
+
+## 📌 Notes
+
+This template is a **full custom rebuild** and does not represent the original structure of any external template.  
+All layout logic, components, and styling have been redesigned manually.
+
+---
