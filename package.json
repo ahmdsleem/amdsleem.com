@@ -1,0 +1,24 @@
+{
+  "name": "mysite",
+  "version": "1.0.0",
+  "main": "index.js",
+ "scripts": {
+  "start": "serve .",
+  "dev": "serve . --port 3000"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmdsleem/amdsleem.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmdsleem/amdsleem.com/issues"
+  },
+  "homepage": "https://github.com/ahmdsleem/amdsleem.com#readme",
+  "description": "",
+  "dependencies": {
+    "serve": "^14.2.6"
+  }
+}

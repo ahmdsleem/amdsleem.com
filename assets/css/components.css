@@ -1,0 +1,343 @@
+
+
+/* Image — Sleem Components */
+
+.image {
+    display: block;
+    border: 0;
+    overflow: hidden;
+}
+
+/* الصور داخل العناصر */
+.image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Avatar */
+.image.avatar48 {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image.avatar48 img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+}
+
+/* Fit (صورة بعرض كامل العنصر) */
+.image.fit {
+    width: 100%;
+}
+
+/* Featured (صورة كبيرة مع مسافة تحتها) */
+.image.featured {
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+/* Centered (صورة في المنتصف) */
+.image.centered {
+    width: 100%;
+    text-align: center;
+}
+
+.image.centered img {
+    width: auto;
+    margin: 0 auto;
+}
+
+/* Left (بديل للـ float القديم) */
+.image.left {
+    width: auto;
+    margin: 0 2em 2em 0;
+    float: left;
+}
+
+/* Lists — Sleem Components */
+
+/* UL */
+ul {
+    list-style: disc;
+    padding-left: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+ul li {
+    padding-left: 0.3em;
+    margin-bottom: 0.5em;
+}
+
+/* OL */
+ol {
+    list-style: decimal;
+    padding-left: 1.4em;
+    margin-bottom: 1.5em;
+}
+
+ol li {
+    padding-left: 0.2em;
+    margin-bottom: 0.5em;
+}
+
+/* Icons — amdsleem Components */
+
+ul.icons {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5em;
+    display: flex;
+    gap: 0.8em;
+    flex-wrap: wrap;
+}
+
+ul.icons li {
+    padding: 0;
+}
+
+ul.icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.2em;
+    height: 2.2em;
+    border-radius: 50%;
+    font-size: 1em;
+    color: inherit;
+    border: none;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* Hover */
+ul.icons a:hover {
+    background: rgba(0, 0, 0, 0.08);
+    color: #E27689;
+}
+
+/* Form — Sleem Components */
+
+/* Label */
+form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    color: #444;
+}
+
+/* Inputs & Select & Textarea */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select,
+form textarea {
+    display: block;
+    width: 100%;
+    padding: 0.75em 1em;
+    border-radius: 0.4em;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #555;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Focus */
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #8ebebc;
+    box-shadow: 0 0 0 2px rgba(142, 190, 188, 0.3);
+    outline: none;
+}
+
+/* Line height */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select {
+    line-height: 1.4em;
+}
+
+/* Textarea */
+form textarea {
+    min-height: 10em;
+    resize: vertical;
+}
+
+/* Placeholder */
+form ::placeholder {
+    color: #777;
+}
+
+/* Table — Sleem Components */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin-bottom: 2em;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* Head */
+table thead {
+    background: #f0f0f0;
+}
+
+table th {
+    padding: 0.75em 1em;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Body */
+table td {
+    padding: 0.75em 1em;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* Zebra rows */
+table tbody tr:nth-child(even) {
+    background: #fafafa;
+}
+
+/* Footer */
+table tfoot {
+    background: #f7f7f7;
+}
+
+table tfoot td {
+    padding: 0.75em 1em;
+    font-weight: 500;
+}
+
+/* Button — Sleem Components */
+
+button,
+.button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75em 2em;
+    border-radius: 0.4em;
+    background: #8ebebc;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.15s ease;
+}
+
+/* Hover */
+button:hover,
+.button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background: #9ececc;
+}
+
+/* Active */
+button:active,
+.button:active,
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active {
+    background: #7eaeac;
+    transform: scale(0.97);
+}
+
+/* Disabled */
+button:disabled,
+.button:disabled,
+input[type="button"]:disabled,
+input[type="submit"]:disabled,
+input[type="reset"]:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Item — Sleem Components */
+
+.item {
+    background: #fff;
+    border-radius: 0.5em;
+    padding: 1.5em;
+    margin-bottom: 2.5em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.item header {
+    margin: 0 0 1em 0;
+    padding: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Title */
+.item header h3 {
+    font-size: 1.15em;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+}
+
+/* Icon — Sleem Components */
+
+/* الأساس */
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* الـ pseudo-element */
+.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    display: inline-block;
+}
+
+/* Solid */
+.icon.solid::before {
+    font-weight: 900;
+}
+
+/* Brands */
+.icon.brands::before {
+    font-family: "Font Awesome 5 Brands";
+}
+
+/* إخفاء الـ label */
+.icon > .label {
+    display: none;
+}
+

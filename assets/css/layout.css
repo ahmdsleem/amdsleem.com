@@ -1,0 +1,503 @@
+@import url("fontawesome-all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
+
+/*
+    amdsleem Core Stylesheet v1.0
+    Technical Architecture by Ahmad Sleem
+    Structured for stability, clarity, and scalable multi‑page design
+*/
+
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after, q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    -webkit-text-size-adjust: none;
+}
+
+mark {
+    background-color: transparent;
+    color: inherit;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+input, select, textarea {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+}
+/* Basic — Sleem Core Layout */
+
+/* Box Sizing */
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Body */
+body {
+    background: #fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px; /* تم تعديل pt → px */
+    font-weight: 300;
+    line-height: 1.75em;
+    color: #555;
+}
+
+/* Disable animations during preload */
+body.is-preload *,
+body.is-preload *::before,
+body.is-preload *::after {
+    animation: none !important;
+    transition: none !important;
+}
+
+/* Inputs inherit typography */
+input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    color: #444;
+    line-height: 1.4em;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1 a strong, h2 a strong, h3 a strong,
+h4 a strong, h5 a strong, h6 a strong {
+    color: #222;
+}
+
+h2 {
+    font-size: 2em;
+    letter-spacing: -0.5px;
+}
+
+h2.alt {
+    color: #777;
+}
+
+h2.alt strong {
+    color: #555;
+}
+
+h3 {
+    font-size: 1.45em;
+}
+
+/* Header & Footer spacing */
+header {
+    margin: 0 0 1.8em 0;
+}
+
+header > p {
+    margin: 1em 0 0 0;
+}
+
+footer {
+    margin: 2em 0 0 0;
+}
+
+/* Text elements */
+strong, b {
+    font-weight: 400;
+    color: #444;
+}
+
+em, i {
+    font-style: italic;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: dotted 1px rgba(128, 128, 128, 0.4);
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    outline: 0;
+}
+
+a:hover {
+    color: #E27689;
+    border-bottom-color: transparent;
+}
+
+/* Sub/Sup */
+sub {
+    position: relative;
+    top: 0.5em;
+    font-size: 0.8em;
+}
+
+sup {
+    position: relative;
+    top: -0.5em;
+    font-size: 0.8em;
+}
+
+/* HR */
+hr {
+    border: 0;
+    border-top: solid 1px #ddd;
+}
+
+/* Blockquote */
+blockquote {
+    border-left: solid 0.4em #ddd;
+    padding: 1em 0 1em 1.5em;
+    font-style: italic;
+}
+
+/* Spacing */
+p, ul, ol, dl, table {
+    margin-bottom: 1.8em;
+}
+
+br.clear {
+    clear: both;
+}
+
+/* Container — Desktop Base */
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 20px;
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+/* Medium screens */
+@media (min-width: 961px) and (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 960px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+/* Row System — Sleem Minimal Grid */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; /* المسافة بين الأعمدة */
+    align-items: stretch;
+}
+
+/* عمود عام */
+.col {
+    flex: 1;
+    min-width: 0;
+}
+
+/* أحجام جاهزة */
+.col-12 { flex: 0 0 100%; }
+.col-6  { flex: 0 0 calc(50% - 40px); }
+.col-4  { flex: 0 0 calc(33.333% - 40px); }
+.col-3  { flex: 0 0 calc(25% - 40px); }
+
+/* محاذاة */
+.row.aln-left   { justify-content: flex-start; }
+.row.aln-center { justify-content: center; }
+.row.aln-right  { justify-content: flex-end; }
+
+.row.aln-top    { align-items: flex-start; }
+.row.aln-middle { align-items: center; }
+.row.aln-bottom { align-items: flex-end; }
+
+/* موبايل */
+@media (max-width: 736px) {
+    .row {
+        gap: 20px;
+    }
+
+    .col-6,
+    .col-4,
+    .col-3 {
+        flex: 0 0 100%;
+    }
+}
+
+/* Sections & Articles — Sleem Layout */
+
+section,
+article {
+    margin-bottom: 2.5em;
+}
+
+/* إزالة المسافة لو آخر عنصر */
+section > :last-child,
+article > :last-child {
+    margin-bottom: 0;
+}
+
+/* منع المسافة داخل الـ row */
+.row > section,
+.row > article {
+    margin-bottom: 0;
+}
+
+/* Sidebar — Sleem Core Layout */
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 100vh;
+    background: #222629;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2em 1.5em;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+}
+
+/* Top section */
+#header .top {
+    flex-grow: 1;
+}
+
+/* Bottom section */
+#header .bottom {
+    padding-top: 1.5em;
+}
+
+/* Logo */
+#logo {
+    margin-bottom: 2em;
+}
+
+#logo h1 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 0;
+    color: #fff;
+}
+
+#logo p {
+    font-size: 0.75em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.5em;
+}
+
+/* Navigation */
+#nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav ul li {
+    margin-bottom: 0.5em;
+}
+
+#nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+    padding: 0.75em 1em;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9em;
+    border-radius: 0.4em;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* Icon inside nav */
+#nav ul li a span:before {
+    width: 1.25em;
+    text-align: center;
+    color: #41484c;
+}
+
+/* Hover */
+#nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+/* Active */
+#nav ul li a.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+#nav ul li a.active span:before {
+    color: #e27689;
+}
+
+/* Icons section */
+#header .icons {
+    text-align: center;
+    font-size: 0.85em;
+}
+
+/* Footer — Sleem Core Layout */
+
+#footer {
+    margin-left: 320px; /* عرض الـ sidebar الجديد */
+    background: #dce3e2;
+    text-align: center;
+    padding: 2.5em 0 3em 0;
+    font-size: 0.85em;
+    color: #444;
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Copyright list */
+#footer .copyright {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#footer .copyright li {
+    display: inline-block;
+    padding-left: 0.75em;
+    margin-left: 0.75em;
+    border-left: 1px solid rgba(128, 128, 128, 0.35);
+    line-height: 1em;
+}
+
+/* أول عنصر */
+#footer .copyright li:first-child {
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/* Main — Sleem Core Layout */
+
+#main {
+    margin-left: 320px; /* عرض الـ sidebar الجديد */
+    padding: 2.5em 0;
+}
+
+/* Sections داخل الـ main */
+#main > section {
+    margin: 0;
+    padding: 3em 0;
+    text-align: center;
+    background: #fff;
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Dark section */
+#main > section.dark {
+    background: #222629;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+#main > section.dark h2,
+#main > section.dark h3,
+#main > section.dark h4,
+#main > section.dark h5,
+#main > section.dark h6 {
+    color: inherit;
+}
+
+#main > section.dark strong {
+    color: #fff;
+}
+
+#main > section.dark a {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+#main > section.dark a:hover {
+    border-bottom-color: transparent;
+}
+
+/* Cover section */
+#main > section.cover {
+    padding: 8em 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ألوان sections لو محتاجها */
+#main > section.bg-light {
+    background: #f5fafa;
+}
+
+#main > section.bg-soft {
+    background: #ecf1f1;
+}
+
+#main > section.bg-muted {
+    background: #e8edec;
+}
+
