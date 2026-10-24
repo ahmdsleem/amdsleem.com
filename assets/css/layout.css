@@ -6,8 +6,11 @@
     Technical Architecture by Ahmad Sleem
     Structured for stability, clarity, and scalable multi‑page design
 */
+html, body {
+    height: 100%;
+}
 
-html, body, div, span, applet, object,
+html, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
 code, del, dfn, em, img, ins, kbd, q, s, samp,
@@ -29,10 +32,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;}
 
-body {
-    line-height: 1;
-}
-
 ol, ul {
     list-style: none;
 }
@@ -49,10 +48,6 @@ blockquote, q {
 table {
     border-collapse: collapse;
     border-spacing: 0;
-}
-
-body {
-    -webkit-text-size-adjust: none;
 }
 
 mark {
@@ -82,14 +77,31 @@ html {
     box-sizing: inherit;
 }
 
-/* Body */
+/* ===========================
+   BODY — Global Styling
+   =========================== */
+
 body {
-    background: #9ebdbe;
+    /* دفع الفوتر لتحت */
+    display: flex;
+    flex-direction: column;
+    
+    /* Reset fixes */
+    -webkit-text-size-adjust: none;
+
+    /* Typography */
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 25px; /* تم تعديل pt → px */
     font-weight: 300;
     line-height: 1.75em;
     color: #5bddd2;
+
+    /* Background (هنا هتحط الخلفية الموحدة لكل الصفحات) */
+    background-image: url('../../images/third_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 /* Disable animations during preload */
@@ -176,7 +188,7 @@ a {
 }
 
 a:hover {
-    color: #E27689;
+    color: #8feb97;
     border-bottom-color: transparent;
 }
 
@@ -262,7 +274,12 @@ br.clear {
 /* أحجام جاهزة */
 .col-12 { flex: 0 0 100%; }
 .col-6  { flex: 0 0 calc(50% - 40px); }
-.col-4  { flex: 0 0 calc(33.333% - 40px); }
+.col-4  {
+    flex: none !important;
+    width: auto !important;
+    min-height: auto !important;
+    height: auto !important;
+}
 .col-3  { flex: 0 0 calc(25% - 40px); }
 .col-8 {
     flex: 0 0 calc(76.666% - 60px);
@@ -309,44 +326,40 @@ article > :last-child {
     margin-bottom: 0;
 }
 
-section.cover {
-    position: relative;
-}
-
-section.cover::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(55, 90, 87, 0.35); /* درجة التعتيم */
-    z-index: 1;
-}
-
-/* نخلي المحتوى فوق الـ overlay */
-section.cover > * {
-    position: relative;
-    z-index: 2;
-}
 
 
-/* Sidebar — Sleem Core Layout */
+/* Sidebar — Sleem Core Layout (Glassmorphism Version) */
 
 #header {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     top: 0;
     left: 0;
     width: 320px;
     height: 100vh;
-    background: #222629;
+
+    /* خلفية زجاجية شفافة */
+    background: rgba(34, 38, 41, 0.55); /* نفس اللون القديم لكن بشفافية */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
     color: #fff;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2em 1.5em;
-    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+
+     padding: 2em 1.5em 0 1.5em;
+
+    /* ظل بسيط ناعم */
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.25);
+
+    /* لو المحتوى طويل */
     overflow-y: auto;
+
+    /* علشان يفضل فوق كل العناصر */
+    z-index: 1000;
 }
 
 /* Top section */
@@ -356,11 +369,17 @@ section.cover > * {
 
 /* Bottom section */
 #header .bottom {
-    padding-top: 1.5em;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
 }
 
 /* Logo */
 #logo {
+    text-align: center;
+    font-size: 1.5em;
     margin-bottom: 2em;
 }
 
@@ -419,24 +438,26 @@ section.cover > * {
 }
 
 #nav ul li a.active span:before {
-    color: #e27689;
+    color: #8feb97;
 }
 
 /* Icons section */
 #header .icons {
-    text-align: center;
-    font-size: 0.85em;
+    margin-bottom: 0;
+    font-size: 1.5em;
 }
 
 /* Footer — Sleem Core Layout */
 
 #footer {
     margin-left: 320px; /* عرض الـ sidebar الجديد */
-    background: #dce3e2;
+    background: rgba(0, 0, 0, 0.35); /* درجة الشفافية */
+    padding: 40px;
+    border-radius: 10px; /* اختياري */
     text-align: center;
-    padding: 2.5em 0 3em 0;
-    font-size: 0.85em;
-    color: #444;
+    /*padding: 2.5em 0 3em 0;*/
+    font-size: 1em;
+    color: #2ba347;
     box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.05);
 }
 
@@ -467,6 +488,7 @@ section.cover > * {
 #main {
     margin-left: 320px; /* عرض الـ sidebar الجديد */
     padding: 2.5em 0;
+    flex: 1; /* عشان الـ main ياخد المساحه الفاضيه كلها */
 }
 
 /* Sections داخل الـ main */
@@ -515,7 +537,10 @@ section.cover > * {
 
 /* ألوان sections لو محتاجها */
 #main > section.bg-light {
-    background: #f5fafa;
+    background: rgba(0, 0, 0, 0.35); /* درجة الشفافية */
+    padding: 40px;
+    border-radius: 10px; /* اختياري */
+    margin-bottom: 90px;
 }
 
 #main > section.bg-soft {
@@ -523,6 +548,180 @@ section.cover > * {
 }
 
 #main > section.bg-muted {
-    background: #e8edec;
+    background: rgba(0, 0, 0, 0.35); /* درجة الشفافية */
+    padding: 40px;
+    border-radius: 10px; /* اختياري */
 }
 
+/* فاصل رفيع */
+.section-tight {
+    margin-top: 4px;
+    padding-top: 4px;
+}
+
+/* شاشة المقالات */
+#article-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.article-box {
+    width: min(900px, 90vw);
+    max-height: 85vh;
+    overflow-y: auto;
+    background: rgba(18,18,22,0.96);
+    border-radius: 16px;
+    padding: 2.2em;
+    box-shadow: 0 0 40px rgba(0,0,0,0.45);
+}
+
+.article-close {
+    position: sticky;
+    top: 0;
+    float: right;
+    border: none;
+    background: transparent;
+    color: #ccc;
+    font-size: 1.6em;
+    cursor: pointer;
+    margin-bottom: 0.5em;
+}
+
+.article-container {
+    width: 100%;
+    color: #e6e6e6;
+    line-height: 1.8;
+}
+
+.article-title {
+    font-size: 1.9em;
+    margin-bottom: 1em;
+    color: #fff;
+}
+
+.article-image {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 1.5em;
+    box-shadow: 0 0 20px rgba(0,0,0,0.35);
+}
+
+.article-text {
+    margin-bottom: 1.2em;
+    font-size: 1.03em;
+}
+
+/* مقاسات الكروت */
+/* Grid */
+.posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+/* Card */
+.blog-box {
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: visible; /* مهم جداً */
+    justify-content: space-between;
+    min-height: 420px;
+}
+
+/* Title */
+.blog-box header {
+    padding: 1em;
+}
+
+/* Text */
+.blog-box p {
+    padding: 0 1em;
+    margin-bottom: 1em;
+    min-height: 70px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    flex-grow: 1; /* يملأ المساحة */
+}
+
+/* تثبيت الهيدر */
+.blog-box header {
+    margin: 0 !important;
+    padding: 1em;
+}
+
+.blog-box header h3 {
+    min-height: 48px; /* سطرين */
+    overflow: hidden;
+}
+
+/* Actions */
+.blog-box .actions {
+    margin-top: auto;
+    padding: 1em;
+}
+
+.blog-box .actions a {
+    position: relative;
+    z-index: 10; /* يمنع القص */
+}
+
+/* منع item من التأثير على blog-box */
+.item.blog-box {
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.item {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: auto !important;
+}
+
+/* PROJECTS GRID */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+@media (max-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.project-box {
+    display: flex;
+    flex-direction: column;
+    height: 420px;
+}
+
+.project-box p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.project-box .actions {
+    margin-top: auto;
+}
