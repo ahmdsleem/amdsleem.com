@@ -725,3 +725,18 @@ article > :last-child {
 .project-box .actions {
     margin-top: auto;
 }
+
+/* التعريب */
+html[lang="ar"] #header {
+    right: 0;
+    left: auto;
+}
+
+html[lang="ar"] #main {
+    margin-right: 320px;
+    margin-left: 0;
+}
+
+html[lang="ar"] body {
+    direction: rtl;
+}
